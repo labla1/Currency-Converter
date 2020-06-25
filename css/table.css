@@ -1,0 +1,24 @@
+.table {
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;
+    border: none;
+    border-collapse: collapse;
+}
+
+.table__cell {
+    border-bottom: 1px solid #293F4F;
+    width: 55px;
+    text-align: center;
+}
+
+.table__row__header--imageDisplay {
+    display: block;
+    height: 35px;
+    width: 35px;
+    padding: 10px;
+}
+
+.table__row__header {
+    padding: 10px;
+}

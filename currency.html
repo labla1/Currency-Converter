@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currency Converter</title>
+  <link href="css/currencyStyle.css" rel="stylesheet">
+  <link href="css/formStyle.css" rel="stylesheet">
+  <link href="css/table.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+  <script defer src="js/currencyJS.js"></script>
+</head>
+
+<body class="container">
+  <header class="header">
+    <h1 class="header--h1">Currency Converter</h1>
+    <i class="fas fa-coins fa-5x"></i>
+  </header>
+  <form class="form js-form" method="GET">
+    <fieldset class="form__fieldset">
+      <legend class="form__legend">Convert Currency</legend>
+      <label class="form__labelText">Amount
+        <input class="js-amount form__input" type="number" name="amount" min="1" required step="0.01" autofocus
+          placeholder="1" value="">
+      </label>
+      <label class="form__labelText">From
+        <select class="form__input js-currencyOption1" name="currency">
+          <option selected value="PLN">PLN - Poland</option>
+          <option value="EUR">EUR - European Union</option>
+          <option value="USD">USD - United States</option>
+        </select>
+      </label>
+      <label class="form__labelText">To
+        <select class="form__input js-currencyOption2" name="currency">
+          <option value="PLN">PLN - Poland</option>
+          <option value="EUR" selected> EUR - European Union</option>
+          <option value="USD">USD - United States</option>
+        </select>
+      </label>
+      <button class="form__button">Convert</button>
+      <p class="result__output"><strong class="js-result"></strong></p>
+    </fieldset>
+  </form>
+  <h2 class="header--h2"><span class="header__h2--textModifier">Current Exchange Rates</span></h2>
+  <table class="table">
+    <tr class="table__row">
+      <th class="table__cell table__row__header" scope="col">&nbsp</th>
+      <th class="table__cell table__row__header" scope="col"><img class="table__row__header--imageDisplay"
+          src="https://i.imgur.com/T06dy2F.png" alt="Poland Flag">PLN</th>
+      <th class="table__cell table__row__header" scope="col"><img class="table__row__header--imageDisplay"
+          src="https://i.imgur.com/pOZgXXF.jpg" alt="European Union Flag">EUR</th>
+      <th class="table__cell table__row__header" scope="col"><img class="table__row__header--imageDisplay"
+          src="https://i.imgur.com/Sm8dTwl.png" alt="United States Flag">USD</th>
+    </tr>
+    <tr class="table__row">
+      <th class="table__cell table__row__header" scope="row"><img class="table__row__header--imageDisplay"
+          src="https://i.imgur.com/T06dy2F.png" alt="Poland Flag"></th>
+      <td class="table__cell" scope="row">1.00000</td>
+      <td class="table__cell" scope="row">0.22487</td>
+      <td class="table__cell" scope="row">0.25314</td>
+    </tr>
+    <tr class="table__row">
+      <th class="table__cell table__row__header" scope="row"><img class="table__row__header--imageDisplay"
+          src="https://i.imgur.com/pOZgXXF.jpg" alt="European Union Flag"></th>
+      <td class="table__cell" scope="row">4.44828</td>
+      <td class="table__cell" scope="row">1.00000</td>
+      <td class="table__cell" scope="row">0.88767</td>
+    </tr>
+    <tr class="table__row">
+      <th class="table__cell table__row__header" scope="row"><img class="table__row__header--imageDisplay"
+          src="https://i.imgur.com/Sm8dTwl.png" alt="United States Flag"></th>
+      <td class="table__cell" scope="row">3.94747</td>
+      <td class="table__cell" scope="row">1.12644</td>
+      <td class="table__cell" scope="row">1.00000</td>
+    </tr>
+  </table>
+  <p class="body_paragraph">The rates shown above have been updated from the European Central Bank on 2020-06-16</p>
+</body>
+
+</html>
