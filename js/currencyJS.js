@@ -1,3 +1,6 @@
+
+console.log("Nowa sekcja została dodana");
+
 let form = document.querySelector(".js-form");
 let currencyAmount = document.querySelector(".js-amount");
 let firstCurrencySelect = document.querySelector(".js-currencyOption1");
