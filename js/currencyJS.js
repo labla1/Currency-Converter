@@ -1,45 +1,57 @@
+{
+    const calculation = (amount, currency1, currency2) => {
+        let result1;
+        const eurRate = 4.44828;
+        const usdRate = 3.94747;
+        const plnRate = 1;
 
-console.log("Nowa sekcja została dodana");
+        switch (currency1) {
+            case "PLN":
+                result1 = amount * plnRate;
+                break
+            case "EUR":
+                result1 = amount * eurRate;
+                break;
+            case "USD":
+                result1 = amount * usdRate;
+                break;
+        };
+        switch (currency2) {
+            case "PLN":
+                return result1 / plnRate;
 
-let form = document.querySelector(".js-form");
-let currencyAmount = document.querySelector(".js-amount");
-let firstCurrencySelect = document.querySelector(".js-currencyOption1");
-let secondCurrencySelect = document.querySelector(".js-currencyOption2");
-let finalOutput = document.querySelector(".js-result")
+            case "EUR":
+                return result1 / eurRate;
 
-let eurRate = 4.44828;
-let usdRate = 3.94747;
-let plnRate = 1;
+            case "USD":
+                return result1 / usdRate;
+        };
+    }
 
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
+    const form = document.querySelector(".js-form");
 
-    let amount = Number(currencyAmount.value);
-    let currency1 = firstCurrencySelect.value;
-    let currency2 = secondCurrencySelect.value;
-    let result1;
-    let result2;
+    const resultText = (amount, currency1, currency2) => {
+        const result2 = calculation(amount, currency1, currency2);
+        const finalOutput = document.querySelector(".js-result")
+        finalOutput.innerText = `${amount.toFixed(2)} ${currency1} = ${result2.toFixed(2)} ${currency2}`;
+    }
 
-    switch (currency1) {
-        case "PLN":
-            result1 = amount * plnRate;
-            break
-        case "EUR":
-            result1 = amount * eurRate;
-            break;
-        case "USD":
-            result1 = amount * usdRate;
-            break;
-    };
-    switch (currency2) {
-        case "PLN":
-            result2 = result1 / plnRate;
-            break;
-        case "EUR":
-            result2 = result1 / eurRate;
-            break;
-        case "USD":
-            result2 = result1 / usdRate;
-    };
-    finalOutput.innerText = `${amount.toFixed(2)} ${currency1} = ${result2.toFixed(2)} ${currency2}`;
-});
+    const onFormSumbit = (event) => {
+        event.preventDefault();
+
+        const currencyAmount = document.querySelector(".js-amount");
+        const firstCurrencySelect = document.querySelector(".js-currencyOption1");
+        const secondCurrencySelect = document.querySelector(".js-currencyOption2");
+
+        const amount = +currencyAmount.value;
+        const currency1 = firstCurrencySelect.value;
+        const currency2 = secondCurrencySelect.value;
+
+        resultText(amount, currency1, currency2);
+    }
+
+    const init = () => {
+        form.addEventListener("submit", onFormSumbit);
+    }
+    init();
+}
