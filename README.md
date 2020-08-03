@@ -1,9 +1,9 @@
 # Currency Converter
 
-##Demo
+## Demo
 https://labla1.github.io/Currency-Converter/
 
-##Instructions 
+## Instructions 
 
 * Enter the amount you want to convert
 * Select "from" currency and "to" currency
